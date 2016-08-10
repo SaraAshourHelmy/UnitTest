@@ -31,7 +31,6 @@ public class TestMain extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public void test() throws Exception {
 
-
         solo.assertCurrentActivity("current", MainActivity.class);
         solo.enterText(0, "soso");
         solo.clickOnButton("Test");
@@ -39,6 +38,8 @@ public class TestMain extends ActivityInstrumentationTestCase2<MainActivity> {
         solo.enterText(0, "sara");
         solo.clickOnButton("Test");
         solo.waitForText(solo.getString(R.id.tv_hello), 1, 3000);
+        solo.goBack();
+        solo.waitForActivity(MainActivity.class,3000);
         // solo.assertCurrentActivity("current", SecondActivity.class);
 
 
